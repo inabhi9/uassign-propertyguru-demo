@@ -167,7 +167,7 @@ class PropertySearch extends Property {
 
         if ($this->title) {
             $query->andWhere(
-                'MATCH (title,description) AGAINST  (:value IN NATURAL LANGUAGE MODE)',
+                'MATCH (title) AGAINST  (:value IN NATURAL LANGUAGE MODE)',
                 [':value' => $this->title]
             );
         }
