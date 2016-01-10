@@ -11,9 +11,16 @@ use yii\helpers\Url;
  * PropertySearch represents the model behind the search form about `app\models\Property`.
  */
 class PropertySearch extends Property {
+    public static $ORDERS = [
+        'price'      => 'Price: Low to High',
+        'price DESC' => 'Price: High to Low',
+        'area'       => 'Area: Low to High',
+        'area DESC'  => 'Area: High to Low',
+    ];
     public $area_range;
     public $price_range;
     public $search;
+    public $order_by;
 
     public static function autocomplete($term) {
         $query = static::find();
@@ -73,7 +80,8 @@ class PropertySearch extends Property {
                     'address',
                     'area_range',
                     'price_range',
-                    'search'
+                    'search',
+                    'order_by'
                 ],
                 'safe'
             ],
@@ -113,6 +121,8 @@ class PropertySearch extends Property {
             // $query->where('0=1');
             return $dataProvider;
         }
+
+        $query->orderBy($this->order_by);
 
         $query->andFilterWhere(
             [

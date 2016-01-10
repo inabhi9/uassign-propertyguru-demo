@@ -53,11 +53,7 @@ function printPropFeature($has, $class, $title) {
             </div>
 
             <div class="col-md-6 col-sm-6">
-                <div class="property-views">
-                    <a href="javascript:;"><i class="fa fa-th-large"></i>Grid</a>
-                    <a href="javascript:;" class="active"><i class="fa fa-bars"></i>List</a>
-                    <a href="javascript:;"><i class="fa fa-map"></i>Map</a>
-                </div>
+
             </div>
         </div>
 

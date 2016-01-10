@@ -9,6 +9,7 @@ use app\models\City;
 use app\models\Color;
 use app\models\Property;
 use yii\helpers\Html;
+use yii\jui\Slider;
 use yii\web\JsExpression;
 use yii\widgets\ActiveForm;
 
@@ -92,7 +93,7 @@ use yii\widgets\ActiveForm;
             </p>
 
             <?=
-            \yii\jui\Slider::widget(
+            Slider::widget(
                 [
                     'clientOptions' => [
                         'min'    => $areaRange['min'],
@@ -122,7 +123,7 @@ use yii\widgets\ActiveForm;
                             </span>
             </p>
             <?=
-            \yii\jui\Slider::widget(
+            Slider::widget(
                 [
                     'id'            => 'price-range',
                     'clientOptions' => [
@@ -139,6 +140,13 @@ use yii\widgets\ActiveForm;
                 ]
             ) ?>
         </div>
+
+        <hr/>
+
+        <?= $form->field($searchModel, 'order_by')
+            ->dropDownList(\app\models\PropertySearch::$ORDERS, ['prompt' => 'ORDER BY'])
+            ->label(false)
+        ?>
 
         <div class="buttons">
             <button class="btn btn-danger" type="submit">
