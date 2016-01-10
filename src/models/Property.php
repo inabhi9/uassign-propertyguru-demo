@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\Inflector;
 
 /**
  * This is the model class for table "property".
@@ -77,6 +78,10 @@ class Property extends \yii\db\ActiveRecord {
 
     public static function getPriceRange() {
         return self::getRange('price');
+    }
+
+    public function getSlug() {
+        return Inflector::slug(Inflector::camel2words($this->title));
     }
 
     /**

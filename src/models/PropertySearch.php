@@ -40,7 +40,7 @@ class PropertySearch extends Property {
             $result[] = [
                 'id'    => $property->id,
                 'label' => $label,
-                'url'   => Url::to(['site/view', 'id' => $property->id])
+                'url' => Url::to(['site/view', 'id' => $property->id, 'slug' => $property->slug])
             ];
         }
 

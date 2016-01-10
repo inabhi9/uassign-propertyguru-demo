@@ -38,8 +38,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName'  => false,
             'rules'           => [
-                //'story/<slug>/<id:\w+>' => 'story/index',
-                //'<controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>'
+                'property/<slug>_<id:\w+>' => 'site/view',
+                //'<controller:\w+>/awefawe/<action:\w+>/<id:\w+>' => '<controller>/<action>'
             ]
         ],
         'log'          => [

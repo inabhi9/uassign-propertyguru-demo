@@ -16,7 +16,7 @@ $badgeCls = [
             <div class="overlay">
                 <?= Html::a(
                     'Detail',
-                    ['view', 'id' => $model->id],
+                    ['view', 'id' => $model->id, 'slug' => $model->slug],
                     ['class' => 'btn btn-detail']
                 ) ?>
             </div>
@@ -24,7 +24,10 @@ $badgeCls = [
         <div class="item-data">
             <div class="item-header clearfix">
                 <h3>
-                    <?= Html::a($model->title, ['view', 'id' => $model->id]) ?>
+                    <?= Html::a(
+                        $model->title,
+                        ['view', 'id' => $model->id, 'slug' => $model->slug]
+                    ) ?>
                 </h3>
                 <a class="favorite" href="javascript:;" data-id="<?= $model->id ?>">
                     <i class="fa fa-heart"></i>
