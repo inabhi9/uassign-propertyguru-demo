@@ -14,8 +14,8 @@ class PropertySearch extends Property {
     public static $ORDERS = [
         'price'      => 'Price: Low to High',
         'price DESC' => 'Price: High to Low',
-        'area'       => 'Area: Low to High',
-        'area DESC'  => 'Area: High to Low',
+        'buildup_area'      => 'Area: Low to High',
+        'buildup_area DESC' => 'Area: High to Low',
     ];
     public $area_range;
     public $price_range;

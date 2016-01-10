@@ -876,7 +876,6 @@ header .user-drop li i {
     background: url(../images/icon-playground.png) no-repeat left;
 }
 
-
 .item .item-detail .garage {
     background: url(../images/icon-garage.png) no-repeat left;
 }
@@ -1878,7 +1877,6 @@ header .user-drop li i {
     background: url(../images/icon-power.png) no-repeat left;
 }
 
-
 .property-data .prop-features .garage {
     background: url(../images/icon-garage.png) no-repeat left;
 }
@@ -2057,4 +2055,8 @@ header .user-drop li i {
 .selectBox-dropdown-menu {
     border: none !important;
     font-size: 15px;
+}
+
+.pagination > li > a, .pagination > li > span {
+    padding: 0px;
 }
