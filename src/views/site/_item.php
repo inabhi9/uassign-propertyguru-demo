@@ -14,7 +14,11 @@ $badgeCls = [
             <img src="<?= $model->images[0]->url ?>" alt="" class="img-responsive">
             <span class="label <?= $badgeCls[$model->type] ?>"><?= $model->typeValue ?></span>
             <div class="overlay">
-                <a href="#" class="btn btn-detail">Detail</a>
+                <?= Html::a(
+                    'Detail',
+                    ['view', 'id' => $model->id],
+                    ['class' => 'btn btn-detail']
+                ) ?>
             </div>
         </figure>
         <div class="item-data">
