@@ -1,13 +1,18 @@
 <?php
 use yii\helpers\Html;
 
+$badgeCls = [
+    'sell' => 'label-success',
+    'buy'  => 'label-primary',
+    'rent' => 'label-info',
+]
 ?>
 
 <div class="col-md-12">
     <div class="item">
         <figure>
             <img src="<?= $model->images[0]->url ?>" alt="" class="img-responsive">
-            <span class="label <?= $model->type ?>"><?= $model->typeValue ?></span>
+            <span class="label <?= $badgeCls[$model->type] ?>"><?= $model->typeValue ?></span>
             <div class="overlay">
                 <a href="#" class="btn btn-detail">Detail</a>
             </div>
