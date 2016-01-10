@@ -27,7 +27,9 @@
     "bower-asset/jquery-selectBox": "^1.2",
     "bower-asset/flexslider": "^2.6",
     "bower-asset/iCheck": "^1.0",
-    "yiisoft/yii2-jui": "^2.0"
+    "yiisoft/yii2-jui": "^2.0",
+    "2amigos/yii2-gallery-widget": "~1.0",
+    "2amigos/yii2-google-maps-library": "*"
   },
   "require-dev": {
     "yiisoft/yii2-codeception": "*",

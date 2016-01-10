@@ -192,4 +192,14 @@ class Property extends \yii\db\ActiveRecord {
     public function getTypeValue() {
         return self::$type[$this->type];
     }
+
+    public function getLatLng() {
+        if (empty($this->lat_lng)) {
+            return [];
+        }
+
+        $_ = explode(',', $this->lat_lng);
+
+        return ['lat' => floatval($_[0]), 'lng' => floatval($_[1])];
+    }
 }
