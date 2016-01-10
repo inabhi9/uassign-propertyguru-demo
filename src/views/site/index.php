@@ -77,7 +77,7 @@ function printPropFeature($has, $class, $title) {
                         [
                             'dataProvider' => $dataProvider,
                             'itemView'     => '_item',
-                            'layout'       => '{items}{pager}'
+                            'layout' => '{items}'
                         ]
                     ) ?>
                 </div>
