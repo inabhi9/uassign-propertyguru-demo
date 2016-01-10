@@ -24,7 +24,7 @@ $badgeCls = [
                 </h3>
                 <a class="favorite" href="javascript:;" data-id="<?= $model->id ?>">
                     <i class="fa fa-heart"></i>
-                    <span class="count">9</span>
+                    <span class="count">0</span>
                 </a>
                 <span class="place"><i class="fa fa-map-marker"></i><?= $model->city->name ?></span>
             </div>
