@@ -17,7 +17,10 @@ use yii\helpers\Html;
                 <h3>
                     <?= Html::a($model->title, ['view', 'id' => $model->id]) ?>
                 </h3>
-                <span class="favorite"><i class="fa fa-heart"></i>9</span>
+                <a class="favorite" href="javascript:;" data-id="<?= $model->id ?>">
+                    <i class="fa fa-heart"></i>
+                    <span class="count">9</span>
+                </a>
                 <span class="place"><i class="fa fa-map-marker"></i><?= $model->city->name ?></span>
             </div>
             <div class="item-detail">
