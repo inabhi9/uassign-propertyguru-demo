@@ -12,7 +12,6 @@ use yii\helpers\Html;
 use yii\web\JsExpression;
 use yii\widgets\ActiveForm;
 
-
 ?>
 
 <aside class="col-md-4">
@@ -40,23 +39,15 @@ use yii\widgets\ActiveForm;
 
         <hr>
 
-        <?= $form->field($searchModel, 'color_id')
-            ->dropDownList(Color::asKeyVal(), ['prompt' => 'COLOR'])
-            ->label(false)
-        ?>
-
         <?= $form->field($searchModel, 'bhk')
             ->dropDownList([1, 2, 3], ['prompt' => 'BHK', 'class' => 'half first'])
             ->label(false)
         ?>
 
-        <select class="half">
-            <option>Baths</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-        </select>
-
+        <?= $form->field($searchModel, 'color_id')
+            ->dropDownList(Color::asKeyVal(), ['prompt' => 'COLOR', 'class' => 'half'])
+            ->label(false)
+        ?>
 
         <hr>
 

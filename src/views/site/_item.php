@@ -1,5 +1,9 @@
-<div class="col-md-12">
+<?php
+use yii\helpers\Html;
 
+?>
+
+<div class="col-md-12">
     <div class="item">
         <figure>
             <img src="<?= $model->images[0]->url ?>" alt="" class="img-responsive">
@@ -10,7 +14,9 @@
         </figure>
         <div class="item-data">
             <div class="item-header clearfix">
-                <h3><a href="#"><?= $model->title ?></a></h3>
+                <h3>
+                    <?= Html::a($model->title, ['view', 'id' => $model->id]) ?>
+                </h3>
                 <span class="favorite"><i class="fa fa-heart"></i>9</span>
                 <span class="place"><i class="fa fa-map-marker"></i><?= $model->city->name ?></span>
             </div>
@@ -18,9 +24,8 @@
                 <span class="price"><?= $model->priceAsCurrency ?></span>
                 <div class="left">
                     <span class="bed"><?= $model->bhk ?></span>
-                    <span class="bath">2</span>
-                    <span class="garage">2</span>
-                    <span class="gym">1</span>
+                    <?= $model->has_gym == 1 ? '<span class="gym" title="Gymnasium">1</span>'
+                        : '' ?>
                 </div>
                 <div class="right">
                     <span class="area"><?= $model->buildup_area ?> sq.ft</span>
