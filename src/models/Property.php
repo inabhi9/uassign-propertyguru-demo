@@ -12,11 +12,9 @@ use Yii;
  * @property string $title
  * @property double $price
  * @property integer $buildup_area
- * @property string $construction_year
  * @property string $created_at
  * @property string $description
  * @property integer $color_id
- * @property integer $possession
  * @property integer $builder_id
  * @property integer $has_pool
  * @property integer $has_gym
@@ -92,9 +90,7 @@ class Property extends \yii\db\ActiveRecord {
                     'title',
                     'price',
                     'buildup_area',
-                    'construction_year',
                     'description',
-                    'possession',
                     'has_pool',
                     'has_gym',
                     'has_community_hall',
@@ -109,7 +105,6 @@ class Property extends \yii\db\ActiveRecord {
                 [
                     'buildup_area',
                     'color_id',
-                    'possession',
                     'builder_id',
                     'has_pool',
                     'has_gym',
@@ -122,7 +117,7 @@ class Property extends \yii\db\ActiveRecord {
                 'integer'
             ],
             [['price'], 'number'],
-            [['construction_year', 'created_at'], 'safe'],
+            [['created_at'], 'safe'],
             [['description', 'lat_lng', 'address'], 'string'],
             [['title'], 'string', 'max' => 255],
             [['type'], 'string', 'max' => 50]
@@ -191,6 +186,10 @@ class Property extends \yii\db\ActiveRecord {
 
     public function getTypeValue() {
         return self::$type[$this->type];
+    }
+
+    public function getKindValue() {
+        return self::$kind[$this->kind];
     }
 
     public function getLatLng() {

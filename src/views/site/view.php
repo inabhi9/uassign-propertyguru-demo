@@ -16,51 +16,74 @@ foreach ($model->images as $image) {
 ?>
 
 <div class="page-wrap properties-page property-single">
-    <h2 class="page-title"><?= $model->title ?></h2>
+    <div class="panel">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-7">
+                    <h2><?= $model->title ?>
+                        <small>by <?= $model->builder->name ?></small>
+                    </h2>
+                    <span><?= $model->address ?></span>
+                </div>
+                <div class="col-md-2">
+                    <h2 class="area"><?= $model->bhk ?> BHK</h2>
+                    <h6 class="area"><?= $model->buildup_area ?>
+                        <small>Sq Ft</small>
+                    </h6>
+                </div>
+                <div class="col-md-3">
+                    <h2><?= $model->priceAsCurrency ?></h2>
+                <span>
+                    ₹ <?= round($model->price / $model->buildup_area, 2) ?> / Sq Ft.
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="container">
-
-
         <div class="row">
-
             <!-- PROPERTY SLIDER -->
-            <div class="col-md-7 property-slider">
+            <div class="col-md-8 property-slider" style="padding-right: 30px; padding-left: 0px">
                 <figure>
                     <?= dosamigos\gallery\Carousel::widget(['items' => $images]); ?>
-                    <span class="label sale"><?= $model->typeValue ?></span>
+                    <span class="label sale">
+                        <?= $model->kindValue . ' | ' . $model->typeValue ?>
+                    </span>
                 </figure>
-                <div class="thumbnails">
-
-                </div>
             </div>
             <!-- PROPERTY SLIDER -->
 
-            <!-- PROPERTY DATA -->
-            <div class="col-md-5 property-data">
-                <div class="prop-features prop-before">
-                    <span class="location"><?= $model->city->name ?></span>
-                    <span class="area"><?= $model->buildup_area ?> Sq Ft</span>
+            <div class="col-md-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        Overview
+                    </div>
+                    <div class="panel-body">
+                        <!-- PROPERTY DATA -->
+                        <h6>Amenities</h6>
+                        <hr style="margin: 10px 0px"/>
+                        <div class="property-data" style="margin-bottom: 0px">
+                            <ul>
+                                <?= $model->has_lift ? '<li>Elevator</li>' : '' ?>
+                                <?= $model->has_power_backup ? '<li>Power Backup</li>' : '' ?>
+                                <?= $model->has_pool ? '<li>Swimming Pool</li>' : '' ?>
+                                <?= $model->has_community_hall ? '<li>Community Center</li>' : '' ?>
+                                <?= $model->has_play_area ? '<li>Children Play Ground</li>' : '' ?>
+                                <?= $model->has_gym ? '<li>Gym</li>' : '' ?>
+                            </ul>
+                        </div>
+                        <!-- PROPERTY DATA -->
+
+                        <h6 style="margin-top: 35px">Description</h6>
+                        <hr style="margin: 10px 0px"/>
+                        <p> <?= $model->description ?> </p>
+                        <!-- PROPERTY DATA -->
+                    </div>
                 </div>
-                <div class="prop-price">
-                    <strong class="price"><?= $model->priceAsCurrency ?></strong>
-                    <a href="" class="btn btn-danger">Contact Agent</a>
-                </div>
-                <div class="prop-features">
-                    <span class="bed"><?= $model->bhk ?> Bedroom</span>
-                </div>
-                <ul>
-                    <?= $model->has_lift ? '<li>Elevator</li>' : '' ?>
-                    <?= $model->has_power_backup ? '<li>Power Backup</li>' : '' ?>
-                    <?= $model->has_pool ? '<li>Swimming Pool</li>' : '' ?>
-                    <?= $model->has_community_hall ? '<li>Community Center</li>' : '' ?>
-                    <?= $model->has_play_area ? '<li>Children Play Ground</li>' : '' ?>
-                    <?= $model->has_gym ? '<li>Gym</li>' : '' ?>
-                </ul>
             </div>
-            <!-- PROPERTY DATA -->
-
         </div>
-
     </div>
 
 
@@ -88,8 +111,6 @@ foreach ($model->images as $image) {
                     'width'  => '100%'
                 ]
             );
-
-
             $map->addOverlay($marker);
             echo $map->display();
             ?>
