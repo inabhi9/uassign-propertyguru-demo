@@ -13,6 +13,10 @@ use yii\widgets\Pjax;
 $this->title = 'Property Listing';
 
 $type = Html::getAttributeValue($searchModel, 'type');
+
+function printPropFeature($has, $class, $title) {
+    return $has == 1 ? '<span class="' . $class . '" title="' . $title . '">&nbsp;</span>' : '';
+}
 ?>
 
 <div class="clearfix"></div>

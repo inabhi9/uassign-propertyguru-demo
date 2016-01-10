@@ -834,7 +834,7 @@ header .user-drop li i {
     color: #727272;
     text-transform: uppercase;
     padding-left: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .item .item-detail span i {
@@ -856,13 +856,26 @@ header .user-drop li i {
     padding: 0;
 }
 
-.item .item-detail .bath {
-    background: url(../images/icon-bath.png) no-repeat left;
+.item .item-detail .power-backup {
+    background: url(../images/icon-power.png) no-repeat left;
 }
 
 .item .item-detail .bed {
     background: url(../images/icon-bed.png) no-repeat left;
 }
+
+.item .item-detail .pool {
+    background: url(../images/icon-pool.png) no-repeat left;
+}
+
+.item .item-detail .lift {
+    background: url(../images/icon-elevator.png) no-repeat left;
+}
+
+.item .item-detail .playground {
+    background: url(../images/icon-playground.png) no-repeat left;
+}
+
 
 .item .item-detail .garage {
     background: url(../images/icon-garage.png) no-repeat left;
@@ -1860,6 +1873,11 @@ header .user-drop li i {
 .property-data .prop-features .bed {
     background: url(../images/icon-bed.png) no-repeat left;
 }
+
+.property-data .prop-features .power-backup {
+    background: url(../images/icon-power.png) no-repeat left;
+}
+
 
 .property-data .prop-features .garage {
     background: url(../images/icon-garage.png) no-repeat left;

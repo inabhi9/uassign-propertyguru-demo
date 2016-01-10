@@ -27,8 +27,15 @@ use yii\helpers\Html;
                 <span class="price"><?= $model->priceAsCurrency ?></span>
                 <div class="left">
                     <span class="bed"><?= $model->bhk ?></span>
-                    <?= $model->has_gym == 1 ? '<span class="gym" title="Gymnasium">1</span>'
-                        : '' ?>
+                    <?= printPropFeature($model->has_gym, 'gym', 'Gymnasium') ?>
+                    <?= printPropFeature(
+                        $model->has_power_backup,
+                        'power-backup',
+                        'Power Backup'
+                    ) ?>
+                    <?= printPropFeature($model->has_pool, 'pool', 'Swimming Pool') ?>
+                    <?= printPropFeature($model->has_lift, 'lift', 'Elevator') ?>
+                    <?= printPropFeature($model->has_play_area, 'playground', 'Playground') ?>
                 </div>
                 <div class="right">
                     <span class="area"><?= $model->buildup_area ?> sq.ft</span>
