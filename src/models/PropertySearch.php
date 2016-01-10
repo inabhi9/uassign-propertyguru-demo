@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
+use yii\helpers\Url;
 
 /**
  * PropertySearch represents the model behind the search form about `app\models\Property`.
@@ -29,7 +30,11 @@ class PropertySearch extends Property {
             $label = $property->title . ' by ' .
                 $property->builder->name . ' in ' .
                 $property->city->name;
-            $result[] = ['id' => $property->id, 'label' => $label];
+            $result[] = [
+                'id'    => $property->id,
+                'label' => $label,
+                'url'   => Url::to(['site/view', 'id' => $property->id])
+            ];
         }
 
         return $result;

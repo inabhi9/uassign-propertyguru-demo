@@ -81,7 +81,7 @@ $type = Html::getAttributeValue($searchModel, 'type');
                                 'select'    => new JsExpression(
                                     '
                                     function( event, ui ) {
-                                        window.location = "' . Url::to(['view']) . '?id="+ui.item.id;
+                                        window.location = ui.item.url;
                                     }
                                 '
                                 )
